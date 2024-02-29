@@ -6,5 +6,6 @@ WHAT-
 
 WHY-
     This is a group collage project. The main requirement is to make a website using data base.
+    
 HOW-
     We thinking of using react, php, mysql
