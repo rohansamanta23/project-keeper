@@ -7,7 +7,7 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #eee;
+  background: #FFE5E5;
 }
 #root{
   width: 100%;
@@ -18,7 +18,7 @@ body {
 }
 header {
   width: 100%;
-  background-color: #f5ba13;
+  background-color: #9290C3;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   display: flex;
@@ -30,14 +30,16 @@ header h1 {
 }
 
 #main{
-  background: rgb(0, 11, 106);
-  background: linear-gradient(138deg, rgba(0, 11, 106,1) 73%, rgb(8, 24, 173) 100%);
+  background: rgb(80, 80, 80);
+  background: linear-gradient(138deg, hsla(0, 0%, 100%, 0.5) 73%, hsla(320, 72%, 90%, 0.5) 100%);
   width: 500px;
   padding: 30px;
   margin-top: 100px;
   position: relative;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  color: #fff;
+  color: #5b5b5b;
+  border-radius: 10px;
+  border: 1px solid #9a9a9d;
   transition: height 2s;
 }
 #main img{
@@ -45,12 +47,13 @@ header h1 {
   top: -30px;
   left: 5px;
   transform: rotate(340deg);
+  pointer-events: none;
 }
 #main h2{
   margin-top: 5px;
   padding-left: 30px;
   font-size: 2.2em;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #24203a;
 }
 .input-set{
   margin: 15px 0;
@@ -59,20 +62,20 @@ input{
   width:100%;
   margin: 10px 0;
   outline: none;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 5px 30px;
   line-height: 30px;
   border-radius: 10px;
-  color:white ;
-  border: 2px solid white;
+  color:#5b5b5b;
+  border: 3px solid #5b5b5b76;
   background: transparent;
   transition: 0.1s ease;
 }
 input::placeholder{
-  color: white;
+  color: #5b5b5b;
 }
 input:focus,input:valid{
-  border: 3px solid white;
+  border: 3px solid #5b5b5b;
 }
 .btn-div{
   margin-bottom: 30px;
@@ -81,12 +84,13 @@ input:focus,input:valid{
   align-items: center;
 }
 .swap-btn{
-  color: #9b4d00;
+  color: #4d447c;
   cursor: pointer;
+  font-weight: 550;
 }
 .swap-btn:hover{
   text-decoration: underline;
-  color: #d26900;
+  color: #251e4c;
 }
 #set-data{
   margin-left: auto;
@@ -94,11 +98,38 @@ input:focus,input:valid{
   padding: 10px 25px;
   font-size: 1.2em;
   border-radius: 10px;
-  color: rgb(0, 11, 106);
+  color: #5b5b5b;
   font-weight: 550;
-  border: 2px solid rgb(251, 216, 40);
+  border: 2px solid #5b5b5b;
   transition: transform .5s;
 }
 #set-data:hover{
   transform: scale(.99);
+  background-color: rgb(205, 205, 205);
+  color: #3f3f3f;
+}
+.notes-section{
+  /* width: 96%; */
+  margin: 0 3%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+}
+.note-set{
+  border: 1px solid rgb(171, 171, 171);
+  margin-top: 20px;
+  border-radius: 20px;
+  width: 315px;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #ffffff3f;
+}
+.note-set h3{
+  color:#24203a;
+  margin-bottom: 10px;
+}
+.note-set p{
+  color: #313131;
 }
