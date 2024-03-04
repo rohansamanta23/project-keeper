@@ -8,7 +8,8 @@ function Add(){
         <>
         {!create&&<button className="cteate-notes" onClick={btnClick}>+</button>}
         {!create&& <div>
-            
+            <input type="text" />
+            <input type="text" />
         </div> }
         </>
         

@@ -134,6 +134,8 @@ input:focus,input:valid{
   color: #313131;
 }
 .cteate-notes{
+  width: 55px;
+  height: 55px;
   position: fixed;
   border-radius: 50%;
   background-color: #4d447c;
@@ -148,9 +150,12 @@ input:focus,input:valid{
 }
 .cteate-notes:hover{
   background-color: #3f3379;
-  transform: scale(.99);
+  transform: scale(.95);
 }
 .expand-div{
   width: 500px;
-  
+
 }
+/* #root > *:not(#main){
+  filter: blur(2px);
+} */
