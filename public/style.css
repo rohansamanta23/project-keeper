@@ -115,47 +115,6 @@ input:focus,input:valid{
   flex-wrap: wrap;
   column-gap: 40px;
 }
-.note-set{
-  border: 1px solid rgb(171, 171, 171);
-  margin-top: 20px;
-  border-radius: 20px;
-  width: 315px;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
-  overflow: hidden;
-  background-color: #ffffff3f;
-}
-.note-set h3{
-  color:#24203a;
-  margin-bottom: 10px;
-}
-.note-set p{
-  color: #313131;
-}
-.cteate-notes{
-  width: 55px;
-  height: 55px;
-  position: fixed;
-  border-radius: 50%;
-  background-color: #4d447c;
-  color: #ccc;
-  padding: 10px 18px;
-  bottom: 30px;
-  right: 30px;
-  border: none;
-  font-size: 2em;
-  font-weight: 550;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-}
-.cteate-notes:hover{
-  background-color: #3f3379;
-  transform: scale(.95);
-}
-.expand-div{
-  width: 500px;
-
-}
 /* #root > *:not(#main){
   filter: blur(2px);
 } */

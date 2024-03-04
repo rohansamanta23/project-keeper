@@ -1,5 +1,5 @@
 import React from "react";
-
+import './Note.css';
 function Notes(){
     return (<div className="note-set">
         <h3 className="note-heading">Tital</h3>
