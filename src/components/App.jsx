@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Header from './Header';
 import Page from './Page';
 import Note from './Note';
-
+import Add from './Add';
 function App(){
-    var [loader,loadState] = useState(false);
+    var [loader,loadState] = useState(true);
 
     function changeState(){
         loader?loadState(false):loadState(true);
@@ -13,10 +13,12 @@ function App(){
     return <>
         <Header/>
         {loader?<div className="notes-section">
-            <Note/><Note/><Note/><Note/><Note/><Note/><Note/><Note/><Note/><Note/><Note/><Note/>
+            {/* <Note/><Note/><Note/><Note/> */}
+            <Add/>
         </div>
-        :<Page/>}
-        
+        :
+            <Page/>
+        }
     </>;
 }
 export default App;
