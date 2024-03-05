@@ -6,11 +6,11 @@ function Add(){
     const [create,createState] = useState(false);
 
     function btnClick(){
-        createState(true);
+        create?createState(false):createState(true);
     }
     return (<>
             {!create&&<button className="cteate-notes" onClick={btnClick}>+</button>}
-            {create&& <Expand/> }
+            {create&& <Expand close={btnClick} /> }
         </>);
 }
 export default Add;
