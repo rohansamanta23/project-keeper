@@ -115,6 +115,6 @@ input:focus,input:valid{
   flex-wrap: wrap;
   column-gap: 40px;
 }
-/* #root > *:not(#main){
-  filter: blur(2px);
+/* #root > div > *:not(.blur-set){
+  filter: blur(1px);
 } */
