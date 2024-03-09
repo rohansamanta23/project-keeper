@@ -1,11 +1,10 @@
 import React from "react";
 import './Note.css';
-function Notes(){
+function Notes(props){
+    const {heading,text} = props.content;
     return (<div className="note-set">
-        <h3 className="note-heading">Title</h3>
-        <p className="note-contant">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, eligendi nemo dolore, maxime omnis dolorum rerum a doloribus ipsam quis nihil excepturi possimus culpa voluptate laboriosam adipisci facilis at magnam.
-        </p>
+        <h3 className="note-heading">{heading}</h3>
+        <p className="note-content">{text}</p>
     </div>);
 }
 

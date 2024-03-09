@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Expand from "./Expand";
 import "./Add.css";
 
-function Add() {
+function Add(props) {
   const [create, createState] = useState(false);
 
   function btnClick() {
@@ -15,7 +15,7 @@ function Add() {
           +
         </button>
       )}
-      {create && <Expand close={btnClick} />}
+      {create && <Expand close={btnClick} data={props.data} />}
     </>
   );
 }
