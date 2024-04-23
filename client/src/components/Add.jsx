@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Expand from "./Expand";
-import "./Add.css";
 
 function Add(props) {
   const [create, createState] = useState(false);
