@@ -2,12 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "../App";
 import SignUp from "../components/SignUp";
 import SignIn from "../components/SignIn";
-import Cookies from "js-cookie";
-
-// ?is logged in
-const token = Cookies.get("use_auth_token");
-
-console.log(token);
+import Add from "../components/Add";
 
 export const router = createBrowserRouter([
   {
@@ -16,16 +11,20 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: token ? <h1>LoggedIn</h1> : <Navigate to={"SignUp"} replace />,
-      },
-      {
-        path: "signup",
-        element: token ? <Navigate to="/" /> : <SignUp />,
-      },
-      {
-        path: "signin",
-        element: token ? <Navigate to="/" /> : <SignIn />,
+        element: <Add />,
       },
     ],
+  },
+  {
+    path: "/home",
+    element: <Navigate to="/" replace />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "signin",
+    element: <SignIn />,
   },
 ]);

@@ -1,35 +1,27 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import closeSvg from "/assets/close_FILL0_wght400_GRAD0_opsz24.svg";
 import doneSvg from "/assets/done_FILL0_wght400_GRAD0_opsz24.svg";
 
-function Expand(props) {
-  const [data,setData] = useState({
-    heading:"",
-    text:""
+// eslint-disable-next-line react/prop-types
+function Expand({ noteData, close }) {
+  const [data, setData] = useState({
+    heading: "",
+    text: "",
   });
-  function inputHandler(event){
-    const {name,value} = event.target;
-    setData(preVal=>{
-      return{
-        ...preVal,
-        [name]: value
-      };
-    });
+  function inputHandler(event) {
+    setData({ ...data, [event.target.id]: event.target.value });
   }
-  function pushData(){
-    props.data(data);
-    setData({
-      heading:"",
-      text:""
-    });
-    props.close();
+  function pushData() {
+    noteData(data);
+    close();
   }
   return (
     <div className="blur-set expand-set">
-      <textarea 
-        className="title-textarea" 
-        placeholder="Title" 
-        cols="10" 
+      <textarea
+        className="title-textarea"
+        placeholder="Title"
+        id="heading"
+        cols="10"
         rows="1"
         name="heading"
         onChange={inputHandler}
@@ -37,11 +29,11 @@ function Expand(props) {
       ></textarea>
       <img
         className="close-btn"
-        onClick={props.close}
         height={30}
         width={30}
         src={closeSvg}
         alt="close"
+        onClick={close}
       />
       <textarea
         className="body-textarea"
@@ -49,10 +41,11 @@ function Expand(props) {
         cols="30"
         rows="10"
         name="text"
+        id="text"
         onChange={inputHandler}
         value={data.text}
       ></textarea>
-      <button id="done-btn" onClick={pushData} >
+      <button id="done-btn" onClick={pushData}>
         <img src={doneSvg} alt="" />
       </button>
     </div>

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import logo from "/assets/paper-clip-svgrepo-com.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { validation } from "../utils/validation";
 import Cookies from "js-cookie";
 
 function SignUp() {
+  const token = Cookies.get("user_auth_token");
+
   const [details, setDetails] = useState({
     name: "",
     email: "",
@@ -18,7 +20,8 @@ function SignUp() {
     confirm_password: "",
   });
 
-  const navigate = useNavigate();
+  const location = useLocation();
+  // const navigate = useNavigate;
 
   function changeHandler(event) {
     setDetails({ ...details, [event.target.id]: event.target.value });
@@ -66,9 +69,12 @@ function SignUp() {
     });
     const data = await res.json();
     console.log(data?.data?.token);
-    Cookies.set("use_auth_token", data?.data?.token, { expires: 7 });
-    navigate("/home");
+    Cookies.set("user_auth_token", data?.data?.token, { expires: 7 });
   };
+
+  if (token) {
+    return <Navigate to="/home" replace state={{ from: location }} />;
+  }
 
   return (
     <section id="main">

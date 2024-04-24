@@ -1,9 +1,11 @@
 import { useState } from "react";
 import logo from "/assets/paper-clip-svgrepo-com.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { validation } from "../utils/validation";
+import Cookies from "js-cookie";
 
 function SignIn() {
+  const token = Cookies.get("user_auth_token");
   const [details, setDetails] = useState({
     email: "",
     password: "",
@@ -21,6 +23,9 @@ function SignIn() {
       email: validation(details.email, "email"),
       password: validation(details.password, "password"),
     });
+  }
+  if (token) {
+    return <Navigate to="/home" replace />;
   }
 
   return (
